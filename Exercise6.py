@@ -1,10 +1,21 @@
-arr=[10, 7, 5, 3]
-x='+'
-a=arr[0]
-b=arr[1:]
-def calc():
-    if x=='+':
-        for i in b:
-            product: a-i
-        print(product)
-calc(arr)
+def calculator(*args):
+    a=args[0]
+    b=args[1:]
+    c="/"
+    try:
+        for i in args[1:]:
+            if c == '+':
+                a+=i
+            elif c == '-':
+                a-=i
+            elif c == '*':
+                a*=i
+            elif c == '/':
+                a/=i
+        return a
+    except TypeError:
+        print("This is not right")
+
+print(calculator(5, 3, 's'))
+
+
